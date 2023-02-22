@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+    <div class="slideshow">
+        <div class="slide">
+            <div id="myElement" class="slide-content">
+                <h3>안녕하세요, 페브리얀티.</h3>
+                <p>"생일 축하합니다. 나는 당신의 나이가 줄어드는 것에 대해 슬퍼합니다. 앞으로 남은 생활에 대해, 당신이 다른 사람들과 특히 가족들에게 유익한 사람이 되기를 바랍니다."
+                </p>
+            </div>
+        </div>
+        <div class="slide">
+            <div id="myElement" class="slide-content">
+                <h3>Annyeonghaseyo, Febriyanti!</h3>
+                <p>”saeng-il chughahabnida. naneun dangsin-ui naiga jul-eodeuneun geos-e daehae seulpeohabnida. ap-eulo nam-eun saenghwal-e daehae, dangsin-i daleun salamdeulgwa teughi gajogdeul-ege yuighan salam-i doegileul balabnida."</p>
+            </div>
+        </div>
+        <div class="form-container">
+            
+    <form>
+                    <h3>Halo Febriyanti!</h3>
+            <p>"Selamat ulang tahun. aku ikut bersedih atas berkurangnya usiamu. untuk sisa hidup yang masih ada, semoga kamu menjadi pribadi yang bermanfaat bagi orang lain terutama untuk keluarga mu sendiri"</p>
+            <input style="background-color: #4286f4; color: white; padding: 10px; border-radius: 5px;" onclick="alert('Happy birthday Febriyanti! Stay healthy and may your blessings increase. Keep your spirit up even though reality isn't as sweet as expectation.')" type="submit" name="" id="" value="Ulangi Pesan" />
+    </form>
+            </div>
+</div>
+<footer>
+    <p>Copyrigth by arkanaryandana.</p>
+</footer>
+    <script>
+        // Show loading animation
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.getElementById("loading").style.display = "flex";
+        });
+
+        // Hide loading animation and show slide show text
+        window.addEventListener("load", function (event) {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("slideshow").style.display = "block";
+
+            // Start slide show animation
+            var slides = document.querySelectorAll(".slide");
+            var currentSlide = 0;
+
+            setInterval(function () {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+                if (currentSlide == slides.length - 1) {
+                    document.getElementById("form").style.display = "block";
+                }
+            }, 5000);
+        });
+
+    </script>
+</body>
+
+</html>
